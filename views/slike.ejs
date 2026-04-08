@@ -1,0 +1,62 @@
+<!--DODATI ŠTO NEDOSTAJE!-->
+
+<!-- Slike u galeriji -->
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/style/style_slike.css">
+
+<title>Galerija</title>
+</head>
+
+
+<body>
+
+<header>
+<h1>Music Data</h1>
+</header>
+
+<!-- NAVIGACIJA (CSS-only dropdown) -->
+<nav aria-label="Glavna navigacija">
+    <div class="menu-btn">☰ Meni</div>
+
+    <ul class="nav-menu">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="grafikon.html">Grafikon</a></li>
+        <li><a href="/slike">Galerija</a></li>
+    </ul>
+</nav>
+
+
+<section class="galerija"> 
+	<h1>Galerija slika</h1>
+
+	<!-- putanja (href) u tagu a je drugačija kad se koristi lightbox od onoga kada želimo da se 
+					 otvori u novom tabu -->
+
+<% images.forEach(image => { %>
+    <figure class="galerija_slika">
+        <figcaption><%= image.title %></figcaption>
+
+        <!-- LIGHTBOX -->
+        <div id="<%= image.id %>" class="lightbox">
+            <a href="slike/<%= image.id %>">
+                <img src="<%= image.url %>" alt="<%= image.title %>">
+            </a>
+        </div>
+
+    </figure>
+<% }); %>
+
+</section>
+
+
+</body>
+</html>
+
+
+
