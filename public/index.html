@@ -38,6 +38,29 @@
     <section class="table-section" aria-labelledby="tablica-glazbe">
         <h2 id="tablica-glazbe">Popis pjesama</h2>
 
+        <div class="filters">
+
+            <!-- 1. dropdown (žanr) -->
+            <label>Žanr:</label>
+            <select id="filter-genre">
+                <option value="">Svi</option>
+            </select>
+
+            <label>Izvođač:</label>
+            <select id="filter-artist">
+                <option value="">Svi</option>
+            </select>
+        
+            <!-- 2. input number (godina od) -->
+            <label>Godina od:</label>
+            <input type="number" id="filter-year" placeholder="npr. 2010">
+        
+            <!-- 3. range slider (BPM) -->
+            <label>Max BPM: <span id="bpm-value">220</span></label>
+            <input type="range" id="filter-bpm" min="50" max="220" value="220">
+
+        </div>
+
         <table>
             <thead>
                 <tr>
@@ -45,84 +68,15 @@
                     <th>Artist</th>
                     <th>Genre</th>
                     <th>Year</th>
-                    <th>Preview</th>
+                    <th>BPM (Feel)</th>
+                    <th>Košarica</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>Take this life</td>
-                    <td>In Flames</td>
-                    <td>Metal</td>
-                    <td>2006</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/9225a58f47db74437b378fc97133af84a8ee64bf?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-
-                <tr>
-                    <td>Laid to Rest</td>
-                    <td>Lamb of God</td>
-                    <td>Metal</td>
-                    <td>2006</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/d5861c42360601ddb199728cbeb8a8222b7d0467?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-
-                <tr>
-                    <td>Master of Puppets</td>
-                    <td>Metallica</td>
-                    <td>Metal</td>
-                    <td>1986</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/070b147d7710598fb96360f94b1adb0709fce235?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-
-                <tr>
-                    <td>Only for the Weak</td>
-                    <td>In Flames</td>
-                    <td>Metal</td>
-                    <td>2000</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/93fe87076729d0fd97424be93dd05a3cd345e9b4?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-
-                <tr>
-                    <td>What I've Done</td>
-                    <td>Linkin Park</td>
-                    <td>Rock</td>
-                    <td>2007</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/b2bdf31db7c3a90dfa8f5c7539f8832c4089afe8?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-
-                <tr>
-                    <td>By Myself</td>
-                    <td>Linkin park</td>
-                    <td>NuMetal</td>
-                    <td>2000</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/411daacd0aaafdd35642f3d1a3e08e1d7dff5892?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-
-                <tr>
-                    <td>Chop Suey!</td>
-                    <td>System of a Down</td>
-                    <td>NuMetal</td>
-                    <td>2008</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/cd2a1f9fd7619bdae4e2e718b11d5bb054a3d677?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-                
-                <tr>
-                    <td>Numb</td>
-                    <td>Linkin Park</td>
-                    <td>NuMetal</td>
-                    <td>2003</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/e6ccf7717f8a167bfea4afc1bf7da1a0cd707fbb?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-
-                <tr>
-                    <td>Duality</td>
-                    <td>Slipnkot</td>
-                    <td>Metal</td>
-                    <td>2013</td>
-                    <td><a href="https://p.scdn.co/mp3-preview/0d69e64bedfe9428d4cb07ee9b134b38e0230c6d?cid=774b29d4f13844c495f206cafdad9c86">Listen</a></td>
-                </tr>
-            
-            </tbody>
+                <tbody id="music-table-body">
+     
+                </tbody>
         </table>
     </section>
 
@@ -136,7 +90,23 @@
             <img src="inflames_battles.jpeg" alt="inflames battles album cover">
         </picture>
 
+            <h2 id="cart-title">Košarica (<span id="cart-count">0</span>)</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naslov</th>
+                        <th>Izvođač</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body"></tbody>
+            </table>
+
+    <button id="confirm-btn">Potvrdi</button>
+
     </aside>
+
 
 </main>
 
@@ -151,5 +121,8 @@
     <p>&copy; 2026 Music Data</p>
 </footer>
 
+<script src="script.js"></script>
+
 </body>
 </html>
+
