@@ -1,0 +1,147 @@
+:root {
+    /* CSS varijable */
+    --metal: 55%;
+    --rock: 11%;
+    --numetal: 33%;
+}
+
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(90deg, #000000, #1a0000);
+    color: #ff1a1a;
+    text-align: center;
+    padding: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav {
+    background: #111;
+    border-bottom: 2px solid #ff1a1a;
+}
+
+.menu-btn {
+    color: #ff1a1a;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* skriven meni */
+.nav-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+/* CSS-only dropdown */
+nav:hover .nav-menu {
+    display: block;
+}
+
+.nav-menu li {
+    padding: 12px;
+    border-top: 1px solid #222;
+}
+
+.nav-menu a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* hover efekt */
+.nav-menu a:hover {
+    color: #ff1a1a;
+}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0d0d0d; /* tamna pozadina */
+    color: #e6e6e6;
+}
+
+/* PIE CHART */
+.pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+        #3498db 0% var(--metal),
+        #e74c3c var(--metal) calc(var(--metal) + var(--rock)),
+        #2ecc71 calc(var(--metal) + var(--rock)) 100%
+    );
+
+    margin: 50px auto;
+
+    /* animacija */
+    animation: show 2s ease;
+}
+
+@keyframes show {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* hover efekt */
+.pie-chart:hover {
+    transform: scale(1.1);
+}
+
+/* ===== CONTAINER ===== */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ===== LEGENDA ===== */
+.legend {
+    background: #111;
+    padding: 15px 25px;
+    border: 1px solid #222;
+    box-shadow: 0 0 10px rgba(255,0,0,0.2);
+}
+
+/* svaki red */
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    color: #ccc;
+}
+
+/* kvadratić boje */
+.color-box {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+/* povezano s grafom (CSS varijable ili iste boje) */
+.metal {
+    background: #3498db;
+}
+
+.rock {
+    background: #e74c3c;
+}
+
+.numetal {
+    background: #2ecc71;
+}
+
+/* hover efekt */
+.legend-item:hover {
+    color: #ff1a1a;
+    transform: translateX(5px);
+    transition: 0.3s;
+}

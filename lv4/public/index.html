@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- SEO meta tag: opis stranice za tražilice -->
+    <meta name="description" content="Web stranica s podacima o glazbi, izvođačima i žanrovima">
+
+    <!-- Responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Music Data</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Music Data</h1>
+</header>
+
+<!-- NAVIGACIJA (CSS-only dropdown) -->
+<nav aria-label="Glavna navigacija">
+    <div class="menu-btn">☰ Meni</div>
+
+    <ul class="nav-menu">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="grafikon.html">Grafikon</a></li>
+        <li><a href="/slike">Galerija</a></li>
+    </ul>
+</nav>
+
+<main class="grid-layout">
+
+    <!-- TABLICA -->
+    <section class="table-section" aria-labelledby="tablica-glazbe">
+        <h2 id="tablica-glazbe">Popis pjesama</h2>
+
+        <div class="filters">
+
+            <!-- 1. dropdown (žanr) -->
+            <label>Žanr:</label>
+            <select id="filter-genre">
+                <option value="">Svi</option>
+            </select>
+
+            <label>Izvođač:</label>
+            <select id="filter-artist">
+                <option value="">Svi</option>
+            </select>
+        
+            <!-- 2. input number (godina od) -->
+            <label>Godina od:</label>
+            <input type="number" id="filter-year" placeholder="npr. 2010">
+        
+            <!-- 3. range slider (BPM) -->
+            <label>Max BPM: <span id="bpm-value">220</span></label>
+            <input type="range" id="filter-bpm" min="50" max="220" value="220">
+
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Artist</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>BPM (Feel)</th>
+                    <th>Playlist</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tbody id="music-table-body">
+     
+                </tbody>
+        </table>
+    </section>
+
+    <aside class="aside-img" aria-label="Slika povezana s glazbom">
+
+
+        <picture>
+            <source media="(max-width: 768px)" srcset="images/inflames_battles.jpeg">
+            <source media="(min-width: 769px)" srcset="images/meteora.jpg">
+            
+            <img src="inflames_battles.jpeg" alt="inflames battles album cover">
+        </picture>
+
+            <h2 id="cart-title">Playlist (<span id="cart-count">0</span>)</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naslov</th>
+                        <th>Izvođač</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body"></tbody>
+            </table>
+
+    <button id="confirm-btn">Potvrdi</button>
+
+    </aside>
+
+
+</main>
+
+<!-- SEKCIJA -->
+<section class="content" aria-labelledby="opis">
+    <h2 id="opis">O stranici</h2>
+    <p>Ova stranica prikazuje podatke o pjesmama, izvođačima i žanrovima.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Music Data</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

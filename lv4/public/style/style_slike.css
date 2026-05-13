@@ -1,0 +1,114 @@
+/* ===== GALERIJA DARK METAL ===== */
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(90deg, #000000, #1a0000);
+    color: #ff1a1a;
+    text-align: center;
+    padding: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ===== NAV ===== */
+nav {
+    background: #111;
+    border-bottom: 2px solid #ff1a1a;
+}
+
+.menu-btn {
+    color: #ff1a1a;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* skriven meni */
+.nav-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+/* CSS-only dropdown */
+nav:hover .nav-menu {
+    display: block;
+}
+
+.nav-menu li {
+    padding: 12px;
+    border-top: 1px solid #222;
+}
+
+.nav-menu a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* hover efekt */
+.nav-menu a:hover {
+    color: #ff1a1a;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0d0d0d; /* tamna pozadina */
+    color: #e6e6e6;
+}
+
+.galerija {
+  background: #0d0d0d;
+  padding: 40px;
+}
+
+/* PROMJENA 1: naslov (metal stil) */
+.galerija h1 {
+  color: #ff1a1a;
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* GRID umjesto starog layouta */
+.galerija {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* svaka slika */
+.galerija_slika {
+  background: #111;
+  padding: 10px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+/* PROMJENA 2: glow efekt */
+.galerija_slika:hover {
+  box-shadow: 0 0 15px #ff1a1a;
+  transform: scale(1.03);
+}
+
+/* slike */
+.galerija_slika img {
+  width: 100%;
+  border-radius: 5px;
+  filter: grayscale(80%);
+  transition: 0.3s;
+}
+
+/* hover efekt */
+.galerija_slika:hover img {
+  filter: grayscale(0%);
+}
+
+/* caption */
+figcaption {
+  text-align: center;
+  color: #aaa;
+  margin-top: 5px;
+}
